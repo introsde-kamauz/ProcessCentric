@@ -2,7 +2,7 @@
 The service that orchestrate all the operation within the process
 
 ## Functions
-REST
+REST: http://processcentricservice.herokuapp.com
 - (GET) **/users**  =>  permits to the people to know the name of the users
 - (GET) **/{id}/recommArtists**  =>  recommends artists to the user with a specific ID field
 - (GET) **/{id}/recommEvents/{origin}**  =>  recommends events to the user based on artist preferences. The current place (origin) is requested in order to track the distance and the time between the user and the location

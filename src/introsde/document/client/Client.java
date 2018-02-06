@@ -14,7 +14,7 @@ public class Client {
     	RecommendationService busS = new RecommendationService();
         RecommendationBusinessLogicImpl resource = busS.getRecommendationBusinessLogicImplPort();
  
-        resource.addArtist("Metallica", 1);
+        resource.addArtist("Iron Maiden", 1);
         
         List<Artist> a = resource.getUserArtists(1);
         System.out.println("GET USER ARTISTS: "+a.size());

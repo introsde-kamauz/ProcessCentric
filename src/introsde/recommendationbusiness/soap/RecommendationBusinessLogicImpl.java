@@ -31,46 +31,6 @@ public interface RecommendationBusinessLogicImpl {
 
     /**
      * 
-     * @param arg1
-     * @param arg0
-     * @throws MalformedURLException_Exception
-     */
-    @WebMethod
-    @RequestWrapper(localName = "addArtist", targetNamespace = "http://soap.recommendationbusiness.introsde/", className = "introsde.recommendationbusiness.soap.AddArtist")
-    @ResponseWrapper(localName = "addArtistResponse", targetNamespace = "http://soap.recommendationbusiness.introsde/", className = "introsde.recommendationbusiness.soap.AddArtistResponse")
-    @Action(input = "http://soap.recommendationbusiness.introsde/RecommendationBusinessLogicImpl/addArtistRequest", output = "http://soap.recommendationbusiness.introsde/RecommendationBusinessLogicImpl/addArtistResponse", fault = {
-        @FaultAction(className = MalformedURLException_Exception.class, value = "http://soap.recommendationbusiness.introsde/RecommendationBusinessLogicImpl/addArtist/Fault/MalformedURLException")
-    })
-    public void addArtist(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        int arg1)
-        throws MalformedURLException_Exception
-    ;
-
-    /**
-     * 
-     * @param arg1
-     * @param arg0
-     * @throws MalformedURLException_Exception
-     */
-    @WebMethod
-    @RequestWrapper(localName = "removeArtist", targetNamespace = "http://soap.recommendationbusiness.introsde/", className = "introsde.recommendationbusiness.soap.RemoveArtist")
-    @ResponseWrapper(localName = "removeArtistResponse", targetNamespace = "http://soap.recommendationbusiness.introsde/", className = "introsde.recommendationbusiness.soap.RemoveArtistResponse")
-    @Action(input = "http://soap.recommendationbusiness.introsde/RecommendationBusinessLogicImpl/removeArtistRequest", output = "http://soap.recommendationbusiness.introsde/RecommendationBusinessLogicImpl/removeArtistResponse", fault = {
-        @FaultAction(className = MalformedURLException_Exception.class, value = "http://soap.recommendationbusiness.introsde/RecommendationBusinessLogicImpl/removeArtist/Fault/MalformedURLException")
-    })
-    public void removeArtist(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        int arg1)
-        throws MalformedURLException_Exception
-    ;
-
-    /**
-     * 
      * @param arg0
      * @return
      *     returns java.util.List<introsde.resourceadapter.soap.Artist>
@@ -109,6 +69,46 @@ public interface RecommendationBusinessLogicImpl {
         List<Artist> arg0,
         @WebParam(name = "arg1", targetNamespace = "")
         String arg1)
+        throws MalformedURLException_Exception
+    ;
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @throws MalformedURLException_Exception
+     */
+    @WebMethod
+    @RequestWrapper(localName = "removeArtist", targetNamespace = "http://soap.recommendationbusiness.introsde/", className = "introsde.recommendationbusiness.soap.RemoveArtist")
+    @ResponseWrapper(localName = "removeArtistResponse", targetNamespace = "http://soap.recommendationbusiness.introsde/", className = "introsde.recommendationbusiness.soap.RemoveArtistResponse")
+    @Action(input = "http://soap.recommendationbusiness.introsde/RecommendationBusinessLogicImpl/removeArtistRequest", output = "http://soap.recommendationbusiness.introsde/RecommendationBusinessLogicImpl/removeArtistResponse", fault = {
+        @FaultAction(className = MalformedURLException_Exception.class, value = "http://soap.recommendationbusiness.introsde/RecommendationBusinessLogicImpl/removeArtist/Fault/MalformedURLException")
+    })
+    public void removeArtist(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        int arg1)
+        throws MalformedURLException_Exception
+    ;
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @throws MalformedURLException_Exception
+     */
+    @WebMethod
+    @RequestWrapper(localName = "addArtist", targetNamespace = "http://soap.recommendationbusiness.introsde/", className = "introsde.recommendationbusiness.soap.AddArtist")
+    @ResponseWrapper(localName = "addArtistResponse", targetNamespace = "http://soap.recommendationbusiness.introsde/", className = "introsde.recommendationbusiness.soap.AddArtistResponse")
+    @Action(input = "http://soap.recommendationbusiness.introsde/RecommendationBusinessLogicImpl/addArtistRequest", output = "http://soap.recommendationbusiness.introsde/RecommendationBusinessLogicImpl/addArtistResponse", fault = {
+        @FaultAction(className = MalformedURLException_Exception.class, value = "http://soap.recommendationbusiness.introsde/RecommendationBusinessLogicImpl/addArtist/Fault/MalformedURLException")
+    })
+    public void addArtist(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        int arg1)
         throws MalformedURLException_Exception
     ;
 

@@ -30,12 +30,12 @@ public interface ResourceAdapterLogic {
      * @param arg0
      */
     @WebMethod
-    @RequestWrapper(localName = "addArtist", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.AddArtist")
-    @ResponseWrapper(localName = "addArtistResponse", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.AddArtistResponse")
-    @Action(input = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/addArtistRequest", output = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/addArtistResponse")
-    public void addArtist(
+    @RequestWrapper(localName = "register", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.Register")
+    @ResponseWrapper(localName = "registerResponse", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.RegisterResponse")
+    @Action(input = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/registerRequest", output = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/registerResponse")
+    public void register(
         @WebParam(name = "arg0", targetNamespace = "")
-        Preference arg0);
+        String arg0);
 
     /**
      * 
@@ -52,44 +52,29 @@ public interface ResourceAdapterLogic {
     /**
      * 
      * @param arg0
-     * @return
-     *     returns java.util.List<introsde.resourceadapter.soap.Artist>
      */
     @WebMethod
-    @WebResult(name = "recommendedSimilarArtistList", targetNamespace = "")
-    @RequestWrapper(localName = "getRecommendedSimilarArtists", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.GetRecommendedSimilarArtists")
-    @ResponseWrapper(localName = "getRecommendedSimilarArtistsResponse", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.GetRecommendedSimilarArtistsResponse")
-    @Action(input = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/getRecommendedSimilarArtistsRequest", output = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/getRecommendedSimilarArtistsResponse")
-    public List<Artist> getRecommendedSimilarArtists(
+    @RequestWrapper(localName = "addArtist", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.AddArtist")
+    @ResponseWrapper(localName = "addArtistResponse", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.AddArtistResponse")
+    @Action(input = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/addArtistRequest", output = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/addArtistResponse")
+    public void addArtist(
         @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
+        Preference arg0);
 
     /**
      * 
      * @param arg0
      * @return
-     *     returns java.util.List<introsde.resourceadapter.soap.Event>
+     *     returns java.lang.Integer
      */
     @WebMethod
-    @WebResult(name = "recommendEventsList", targetNamespace = "")
-    @RequestWrapper(localName = "recommendEvents", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.RecommendEvents")
-    @ResponseWrapper(localName = "recommendEventsResponse", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.RecommendEventsResponse")
-    @Action(input = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/recommendEventsRequest", output = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/recommendEventsResponse")
-    public List<Event> recommendEvents(
+    @WebResult(name = "getArtistExternalId", targetNamespace = "")
+    @RequestWrapper(localName = "getArtistExternalId", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.GetArtistExternalId")
+    @ResponseWrapper(localName = "getArtistExternalIdResponse", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.GetArtistExternalIdResponse")
+    @Action(input = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/getArtistExternalIdRequest", output = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/getArtistExternalIdResponse")
+    public Integer getArtistExternalId(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
-
-    /**
-     * 
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(name = "getMotivation", targetNamespace = "")
-    @RequestWrapper(localName = "getMotivation", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.GetMotivation")
-    @ResponseWrapper(localName = "getMotivationResponse", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.GetMotivationResponse")
-    @Action(input = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/getMotivationRequest", output = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/getMotivationResponse")
-    public String getMotivation();
 
     /**
      * 
@@ -110,14 +95,14 @@ public interface ResourceAdapterLogic {
      * 
      * @param arg0
      * @return
-     *     returns java.lang.Integer
+     *     returns java.util.List<introsde.resourceadapter.soap.Artist>
      */
     @WebMethod
-    @WebResult(name = "getArtistExternalId", targetNamespace = "")
-    @RequestWrapper(localName = "getArtistExternalId", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.GetArtistExternalId")
-    @ResponseWrapper(localName = "getArtistExternalIdResponse", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.GetArtistExternalIdResponse")
-    @Action(input = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/getArtistExternalIdRequest", output = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/getArtistExternalIdResponse")
-    public Integer getArtistExternalId(
+    @WebResult(name = "recommendedSimilarArtistList", targetNamespace = "")
+    @RequestWrapper(localName = "getRecommendedSimilarArtists", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.GetRecommendedSimilarArtists")
+    @ResponseWrapper(localName = "getRecommendedSimilarArtistsResponse", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.GetRecommendedSimilarArtistsResponse")
+    @Action(input = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/getRecommendedSimilarArtistsRequest", output = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/getRecommendedSimilarArtistsResponse")
+    public List<Artist> getRecommendedSimilarArtists(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
 
@@ -159,16 +144,40 @@ public interface ResourceAdapterLogic {
 
     /**
      * 
-     * @param arg0
      * @return
-     *     returns java.util.List<introsde.resourceadapter.soap.Evaluation>
+     *     returns java.lang.String
      */
     @WebMethod
-    @WebResult(name = "getEvaluationsByUser", targetNamespace = "")
-    @RequestWrapper(localName = "getEvaluationsByUser", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.GetEvaluationsByUser")
-    @ResponseWrapper(localName = "getEvaluationsByUserResponse", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.GetEvaluationsByUserResponse")
-    @Action(input = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/getEvaluationsByUserRequest", output = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/getEvaluationsByUserResponse")
-    public List<Evaluation> getEvaluationsByUser(
+    @WebResult(name = "getMotivation", targetNamespace = "")
+    @RequestWrapper(localName = "getMotivation", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.GetMotivation")
+    @ResponseWrapper(localName = "getMotivationResponse", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.GetMotivationResponse")
+    @Action(input = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/getMotivationRequest", output = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/getMotivationResponse")
+    public String getMotivation();
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<introsde.resourceadapter.soap.Person>
+     */
+    @WebMethod
+    @WebResult(name = "getAllUsers", targetNamespace = "")
+    @RequestWrapper(localName = "getAllUsers", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.GetAllUsers")
+    @ResponseWrapper(localName = "getAllUsersResponse", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.GetAllUsersResponse")
+    @Action(input = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/getAllUsersRequest", output = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/getAllUsersResponse")
+    public List<Person> getAllUsers();
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns introsde.resourceadapter.soap.Artist
+     */
+    @WebMethod
+    @WebResult(name = "getArtistById", targetNamespace = "")
+    @RequestWrapper(localName = "getArtistById", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.GetArtistById")
+    @ResponseWrapper(localName = "getArtistByIdResponse", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.GetArtistByIdResponse")
+    @Action(input = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/getArtistByIdRequest", output = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/getArtistByIdResponse")
+    public Artist getArtistById(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
 
@@ -189,25 +198,31 @@ public interface ResourceAdapterLogic {
 
     /**
      * 
+     * @param arg0
      * @return
-     *     returns java.util.List<introsde.resourceadapter.soap.Person>
+     *     returns java.util.List<introsde.resourceadapter.soap.Event>
      */
     @WebMethod
-    @WebResult(name = "getAllUsers", targetNamespace = "")
-    @RequestWrapper(localName = "getAllUsers", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.GetAllUsers")
-    @ResponseWrapper(localName = "getAllUsersResponse", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.GetAllUsersResponse")
-    @Action(input = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/getAllUsersRequest", output = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/getAllUsersResponse")
-    public List<Person> getAllUsers();
+    @WebResult(name = "recommendEventsList", targetNamespace = "")
+    @RequestWrapper(localName = "recommendEvents", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.RecommendEvents")
+    @ResponseWrapper(localName = "recommendEventsResponse", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.RecommendEventsResponse")
+    @Action(input = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/recommendEventsRequest", output = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/recommendEventsResponse")
+    public List<Event> recommendEvents(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
 
     /**
      * 
      * @param arg0
+     * @return
+     *     returns java.util.List<introsde.resourceadapter.soap.Evaluation>
      */
     @WebMethod
-    @RequestWrapper(localName = "register", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.Register")
-    @ResponseWrapper(localName = "registerResponse", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.RegisterResponse")
-    @Action(input = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/registerRequest", output = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/registerResponse")
-    public void register(
+    @WebResult(name = "getEvaluationsByUser", targetNamespace = "")
+    @RequestWrapper(localName = "getEvaluationsByUser", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.GetEvaluationsByUser")
+    @ResponseWrapper(localName = "getEvaluationsByUserResponse", targetNamespace = "http://soap.resourceadapter.introsde/", className = "introsde.resourceadapter.soap.GetEvaluationsByUserResponse")
+    @Action(input = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/getEvaluationsByUserRequest", output = "http://soap.resourceadapter.introsde/ResourceAdapterLogic/getEvaluationsByUserResponse")
+    public List<Evaluation> getEvaluationsByUser(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
 

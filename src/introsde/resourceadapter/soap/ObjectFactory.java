@@ -26,9 +26,11 @@ public class ObjectFactory {
 
     private final static QName _GetArtistNameFromExternalId_QNAME = new QName("http://soap.resourceadapter.introsde/", "getArtistNameFromExternalId");
     private final static QName _GetEvaluationsByUserResponse_QNAME = new QName("http://soap.resourceadapter.introsde/", "getEvaluationsByUserResponse");
+    private final static QName _Artist_QNAME = new QName("http://soap.resourceadapter.introsde/", "artist");
     private final static QName _GetEvaluationsByUser_QNAME = new QName("http://soap.resourceadapter.introsde/", "getEvaluationsByUser");
     private final static QName _RecommendEventsResponse_QNAME = new QName("http://soap.resourceadapter.introsde/", "recommendEventsResponse");
     private final static QName _Evaluation_QNAME = new QName("http://soap.resourceadapter.introsde/", "evaluation");
+    private final static QName _GetArtistByIdResponse_QNAME = new QName("http://soap.resourceadapter.introsde/", "getArtistByIdResponse");
     private final static QName _GetRecommendedSimilarArtists_QNAME = new QName("http://soap.resourceadapter.introsde/", "getRecommendedSimilarArtists");
     private final static QName _GetMotivationResponse_QNAME = new QName("http://soap.resourceadapter.introsde/", "getMotivationResponse");
     private final static QName _GetMotivation_QNAME = new QName("http://soap.resourceadapter.introsde/", "getMotivation");
@@ -42,6 +44,7 @@ public class ObjectFactory {
     private final static QName _Preference_QNAME = new QName("http://soap.resourceadapter.introsde/", "preference");
     private final static QName _EvaluateArtistRecommendationResponse_QNAME = new QName("http://soap.resourceadapter.introsde/", "evaluateArtistRecommendationResponse");
     private final static QName _GetArtistExternalIdResponse_QNAME = new QName("http://soap.resourceadapter.introsde/", "getArtistExternalIdResponse");
+    private final static QName _GetArtistById_QNAME = new QName("http://soap.resourceadapter.introsde/", "getArtistById");
     private final static QName _RemoveArtistResponse_QNAME = new QName("http://soap.resourceadapter.introsde/", "removeArtistResponse");
     private final static QName _EvaluateArtistRecommendation_QNAME = new QName("http://soap.resourceadapter.introsde/", "evaluateArtistRecommendation");
     private final static QName _AddArtist_QNAME = new QName("http://soap.resourceadapter.introsde/", "addArtist");
@@ -86,6 +89,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Artist }
+     * 
+     */
+    public Artist createArtist() {
+        return new Artist();
+    }
+
+    /**
      * Create an instance of {@link RecommendEventsResponse }
      * 
      */
@@ -99,6 +110,14 @@ public class ObjectFactory {
      */
     public Evaluation createEvaluation() {
         return new Evaluation();
+    }
+
+    /**
+     * Create an instance of {@link GetArtistByIdResponse }
+     * 
+     */
+    public GetArtistByIdResponse createGetArtistByIdResponse() {
+        return new GetArtistByIdResponse();
     }
 
     /**
@@ -206,6 +225,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetArtistById }
+     * 
+     */
+    public GetArtistById createGetArtistById() {
+        return new GetArtistById();
+    }
+
+    /**
      * Create an instance of {@link RemoveArtistResponse }
      * 
      */
@@ -294,14 +321,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Artist }
-     * 
-     */
-    public Artist createArtist() {
-        return new Artist();
-    }
-
-    /**
      * Create an instance of {@link Event }
      * 
      */
@@ -325,6 +344,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://soap.resourceadapter.introsde/", name = "getEvaluationsByUserResponse")
     public JAXBElement<GetEvaluationsByUserResponse> createGetEvaluationsByUserResponse(GetEvaluationsByUserResponse value) {
         return new JAXBElement<GetEvaluationsByUserResponse>(_GetEvaluationsByUserResponse_QNAME, GetEvaluationsByUserResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Artist }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.resourceadapter.introsde/", name = "artist")
+    public JAXBElement<Artist> createArtist(Artist value) {
+        return new JAXBElement<Artist>(_Artist_QNAME, Artist.class, null, value);
     }
 
     /**
@@ -352,6 +380,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://soap.resourceadapter.introsde/", name = "evaluation")
     public JAXBElement<Evaluation> createEvaluation(Evaluation value) {
         return new JAXBElement<Evaluation>(_Evaluation_QNAME, Evaluation.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetArtistByIdResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.resourceadapter.introsde/", name = "getArtistByIdResponse")
+    public JAXBElement<GetArtistByIdResponse> createGetArtistByIdResponse(GetArtistByIdResponse value) {
+        return new JAXBElement<GetArtistByIdResponse>(_GetArtistByIdResponse_QNAME, GetArtistByIdResponse.class, null, value);
     }
 
     /**
@@ -469,6 +506,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://soap.resourceadapter.introsde/", name = "getArtistExternalIdResponse")
     public JAXBElement<GetArtistExternalIdResponse> createGetArtistExternalIdResponse(GetArtistExternalIdResponse value) {
         return new JAXBElement<GetArtistExternalIdResponse>(_GetArtistExternalIdResponse_QNAME, GetArtistExternalIdResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetArtistById }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.resourceadapter.introsde/", name = "getArtistById")
+    public JAXBElement<GetArtistById> createGetArtistById(GetArtistById value) {
+        return new JAXBElement<GetArtistById>(_GetArtistById_QNAME, GetArtistById.class, null, value);
     }
 
     /**

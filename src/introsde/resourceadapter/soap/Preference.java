@@ -16,9 +16,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="artistId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="artistName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="userId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="artistId" type="{http://soap.resourceadapter.introsde/}artist" minOccurs="0"/>
+ *         &lt;element name="userId" type="{http://soap.resourceadapter.introsde/}person" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -30,24 +29,22 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "preference", propOrder = {
     "artistId",
-    "artistName",
     "userId"
 })
 public class Preference {
 
-    protected String artistId;
-    protected String artistName;
-    protected String userId;
+    protected Artist artistId;
+    protected Person userId;
 
     /**
      * Recupera il valore della proprietà artistId.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Artist }
      *     
      */
-    public String getArtistId() {
+    public Artist getArtistId() {
         return artistId;
     }
 
@@ -56,35 +53,11 @@ public class Preference {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Artist }
      *     
      */
-    public void setArtistId(String value) {
+    public void setArtistId(Artist value) {
         this.artistId = value;
-    }
-
-    /**
-     * Recupera il valore della proprietà artistName.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getArtistName() {
-        return artistName;
-    }
-
-    /**
-     * Imposta il valore della proprietà artistName.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setArtistName(String value) {
-        this.artistName = value;
     }
 
     /**
@@ -92,10 +65,10 @@ public class Preference {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Person }
      *     
      */
-    public String getUserId() {
+    public Person getUserId() {
         return userId;
     }
 
@@ -104,10 +77,10 @@ public class Preference {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Person }
      *     
      */
-    public void setUserId(String value) {
+    public void setUserId(Person value) {
         this.userId = value;
     }
 

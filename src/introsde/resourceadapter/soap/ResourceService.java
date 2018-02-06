@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "ResourceService", targetNamespace = "http://soap.resourceadapter.introsde/", wsdlLocation = "https://resourceadapter.herokuapp.com/?wsdl")
+@WebServiceClient(name = "ResourceService", targetNamespace = "http://soap.resourceadapter.introsde/", wsdlLocation = "http://10.214.206.2:6902/resourceadapter?wsdl")
 public class ResourceService
     extends Service
 {
@@ -30,7 +30,7 @@ public class ResourceService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("https://resourceadapter.herokuapp.com/?wsdl");
+            url = new URL("http://10.214.206.2:6902/resourceadapter?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
